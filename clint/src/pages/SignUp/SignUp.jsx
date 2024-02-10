@@ -86,7 +86,7 @@ const SignUp = () => {
             </form>
             <p className="my-4 text-center">
               Already have an account? Please{' '}
-              <Link className="underline text-rose-800 text-lg" to="/login">
+              <Link className="underline text-[#FF3811] text-lg" to="/login">
                 login
               </Link>
             </p>

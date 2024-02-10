@@ -76,7 +76,7 @@ const Login = () => {
             </form>
             <p className="my-4 text-center">
               Don't have any account? Please{' '}
-              <Link className="underline text-rose-800 text-lg" to="/signup">
+              <Link className="underline text-[#FF3811] text-lg" to="/signup">
                 signup
               </Link>
             </p>

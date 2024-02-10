@@ -13,11 +13,11 @@ const About = () => {
           />
           <img
             src={parts}
-            className="w-1/2 absolute right-5 top-1/2 rounded-lg ring-8 ring-rose-700 shadow-2xl transform hover:scale-110 transition-all duration-300 ease-in"
+            className="w-1/2 absolute right-5 top-1/2 rounded-lg ring-8 ring-[#FF3811] shadow-2xl transform hover:scale-110 transition-all duration-300 ease-in"
           />
         </div>
         <div className="lg:w-1/2 space-y-5">
-          <h3 className="text-3xl text-rose-700 font-bold">About Us</h3>
+          <h3 className="text-3xl text-[#FF3811] font-bold">About Us</h3>
           <h1 className="text-5xl font-bold">
             We are qualified & of experience in this field
           </h1>
@@ -33,7 +33,7 @@ const About = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn bg-rose-700 text-white text-base">
+          <button className="btn bg-[#FF3811] text-white text-base">
             Get More Info
           </button>
         </div>
