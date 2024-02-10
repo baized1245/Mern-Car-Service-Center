@@ -66,7 +66,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary btn-outline"
+                  className="btn bg-[#FF3811] text-white btn-outline"
                   type="submit"
                   value="Login"
                   name=""
