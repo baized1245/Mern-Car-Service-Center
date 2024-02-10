@@ -32,6 +32,10 @@ async function run() {
       .db('carServiceCenter')
       .collection('services')
 
+    const bookingCollection = client
+      .db('carServiceCenter')
+      .collection('bookings')
+
     // routes..............
     // get all service data
     app.get('/services', async (req, res) => {
@@ -47,6 +51,11 @@ async function run() {
 
       const result = await serviceCollection.findOne(query)
       res.send(result)
+    })
+
+    // booking a service
+    app.post('/bookings', (req, res) => {
+      const booking = req.body
     })
 
     // Send a ping to confirm a successful connection
