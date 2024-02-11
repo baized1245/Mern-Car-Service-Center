@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaEraser, FaDeleteLeft } from 'react-icons/fa6'
 
-const BookingsRow = ({ booking, handleDelete }) => {
-  const { _id, img, date, price, service } = booking
+const BookingsRow = ({ booking, handleDelete, handleBookingConfirm }) => {
+  const { _id, img, date, price, service, status } = booking
 
   return (
     <tr>
@@ -25,7 +25,16 @@ const BookingsRow = ({ booking, handleDelete }) => {
       <td>{date}</td>
       <td>$ : {price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        {status === 'confirm' ? (
+          <span className="text-[#FF3811] text-base">Confirm</span>
+        ) : (
+          <button
+            onClick={() => handleBookingConfirm(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Please Confirm
+          </button>
+        )}
       </th>
     </tr>
   )

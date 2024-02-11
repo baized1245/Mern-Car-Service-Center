@@ -73,8 +73,17 @@ async function run() {
     })
 
     // update a booking
-    app.put('/bookings/:id', async (req, res) => {
+    app.patch('/bookings/:id', async (req, res) => {
+      const id = req.params.id
+      const filter = { _id: new ObjectId(id) }
       const updatedBooking = req.body
+      const updatedDoc = {
+        $set: {
+          status: updatedBooking.status,
+        },
+      }
+      const result = await bookingCollection.updateOne(filter, updatedDoc)
+      res.send(result)
     })
 
     // delete a booking
