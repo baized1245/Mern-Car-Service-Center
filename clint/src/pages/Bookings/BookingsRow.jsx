@@ -1,10 +1,19 @@
 import React from 'react'
+import { FaEraser, FaDeleteLeft } from 'react-icons/fa6'
 
-const BookingsRow = ({ booking, index }) => {
-  const { img, date, price, service } = booking
+const BookingsRow = ({ booking, handleDelete }) => {
+  const { _id, img, date, price, service } = booking
+
   return (
     <tr>
-      <th>{index}</th>
+      <th>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-sm btn-circle bg-white"
+        >
+          <FaDeleteLeft className="text-[#FF3811]" size={20} />
+        </button>
+      </th>
       <td>
         <div className="avatar">
           <div className="rounded w-12 h-12">
