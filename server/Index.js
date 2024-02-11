@@ -36,7 +36,7 @@ async function run() {
       .db('carServiceCenter')
       .collection('bookings')
 
-    // routes..............
+    // services routes..............
     // get all service data
     app.get('/services', async (req, res) => {
       const cursor = await serviceCollection.find()
@@ -53,9 +53,23 @@ async function run() {
       res.send(result)
     })
 
+    // bookings route
+
+    // get bookings by email query
+    app.get('/bookings', async (req, res) => {
+      let query = {}
+      if (req.query?.email) {
+        query = { email: req.query.email }
+      }
+      const result = await bookingCollection.find().toArray()
+      res.send(result)
+    })
+
     // booking a service
-    app.post('/bookings', (req, res) => {
+    app.post('/bookings', async (req, res) => {
       const booking = req.body
+      const result = await bookingCollection.insertOne(booking)
+      res.send(result)
     })
 
     // Send a ping to confirm a successful connection
