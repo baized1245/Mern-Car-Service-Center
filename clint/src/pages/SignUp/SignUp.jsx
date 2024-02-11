@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import loginImg from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../provider/AuthProvider'
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext)
+
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const handleSignUp = (event) => {
     event.preventDefault()
     const form = event.target
@@ -17,6 +21,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user
         console.log(user)
+        navigate(location?.state ? location.state : '/', { replace: true })
       })
       .catch((error) => {
         console.log(error)
@@ -68,11 +73,6 @@ const SignUp = () => {
                   className="input input-bordered"
                   required
                 />
-                {/* <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label> */}
               </div>
               <div className="form-control mt-6">
                 <input
