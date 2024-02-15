@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000
 // middleware
 app.use(
   cors({
-    origin: 'https://mern-book-store-1028f.web.app',
+    origin: 'https://mern-car-service-center.web.app/',
     method: ['POST', 'GET', 'PATCH', 'PUT', 'DELETE'],
     credential: true,
   })
